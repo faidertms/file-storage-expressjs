@@ -1,0 +1,18 @@
+
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "strict": true,
+        "esModuleInterop": true,
+        "outDir": "./build"
+    },
+    "include": [
+        "server/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "front",
+         "**/*.test.ts"
+        ]
+}
