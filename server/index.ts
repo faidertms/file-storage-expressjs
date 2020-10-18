@@ -11,6 +11,8 @@ const prefix = "/api";
 app.use(express.json());
 app.use(prefix, fileUploadRoutes);
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`⚡️[server]: Server(${process.env.NODE_ENV}) is running at https://localhost:${PORT}`);
 });
+
+export default server;

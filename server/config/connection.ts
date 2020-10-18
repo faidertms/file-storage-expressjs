@@ -5,7 +5,6 @@ dotenv.config({ path: process.env.NODE_ENV === "development" ? ".env.dev" : ".en
 
 export default knex({
     client: "sqlite3",
-    debug: true,
     connection: { 
         filename: process.env.dbFilename ?? "./server/database/database.sqlite3"
     }

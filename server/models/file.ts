@@ -2,9 +2,9 @@ import { Model } from "objection";
 import knex from "../config/connection";
 Model.knex(knex);
 
-export default class FileModel extends Model {
+export default class File extends Model {
 
-    id?: bigint;
+    id?: number;
     originalname!: string;
     filename!: string;
     path!: string;
@@ -31,7 +31,7 @@ export default class FileModel extends Model {
             required: ["originalname", "filename", "path", "mimetype"],
 
             properties: {
-                id: { type: "bigint" },
+                id: { type: "number" },
                 originalname: { type: "string" },
                 filename: { type: "string" },
                 path: { type: "string" },

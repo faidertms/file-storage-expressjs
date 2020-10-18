@@ -1,9 +1,8 @@
-import { Request, Response } from "express";
+import { Response } from "express";
 import {
     ValidationError,
     NotFoundError,
     DBError,
-    ConstraintViolationError,
     UniqueViolationError,
     NotNullViolationError,
     ForeignKeyViolationError,
@@ -138,7 +137,3 @@ export const downloadResponse = ({ filePath, fileName, res }: DownloadResponse):
     res.download(filePath, fileName);
 }
 
-export function getFileExtension(filename: string): string {
-    let ext = /^.+\.([^.]+)$/.exec(filename);
-    return ext == null ? "" : ext[1];
-}
