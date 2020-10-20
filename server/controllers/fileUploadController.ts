@@ -16,7 +16,7 @@ export const store = async function (req: Request, res: Response): Promise<void>
     try {
         const filesToSave: Array<Express.Multer.File> = Array.isArray(req.files) ? req.files : [];
         const filesSaved: Array<File> = await saveFiles(filesToSave);
-        sendResponse({ code: 201, message: "Created", values: { files: filesSaved }, res });
+        sendResponse({ code: 201, message: "Created", values: filesSaved, res });
     } catch (error) {
         errorHandler({ error, res });
     }

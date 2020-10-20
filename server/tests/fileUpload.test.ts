@@ -13,9 +13,9 @@ describe("Testing all life circle of FileUpload", () => {
 
     test("Create a File", async () => {
         const response: request.Response = await request(app).post("/api/file").attach('files[]', './server/tests/files/init.txt');
-        fileId = response.body.values.files[0].id;
+        fileId = response.body.values[0].id;
         expect(response.status).toBe(201);
-        expect(response.body.values.files[0].originalname).toBe('init.txt');
+        expect(response.body.values[0].originalname).toBe('init.txt');
     });
 
     test("Creating a file that exists", async () => {
