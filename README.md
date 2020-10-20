@@ -2,4 +2,4 @@
 Things to be made.  
 
 [] Front-End(React).  
-[] Documentation(Swagger).  
+[x] Documentation(Swagger).  
