@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Make gradlew executable
-        run: chmod +x -R /server
+        run: ls
       - name: Run Tests
         run: |
-          npm install 
-          npm run migrate
-          npm test
+          sudo npm install 
+          sudo npm run migrate
+          sudo npm test
