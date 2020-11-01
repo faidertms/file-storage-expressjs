@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Make gradlew executable
+        run: chmod +x -R /server
       - name: Run Tests
         run: |
           npm install 
