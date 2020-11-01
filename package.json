@@ -8,7 +8,7 @@
     "prod": "cross-env npm run tsc && NODE_ENV=production node build/index.js",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only ./server/index.ts",
     "migrate": "npx knex migrate:latest --knexfile server/database/knexfile.ts",
-    "test": "jest"
+    "test": "jest --forceExit --detectOpenHandles --maxWorkers=10"
   },
   "author": "",
   "license": "ISC",

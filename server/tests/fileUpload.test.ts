@@ -1,7 +1,6 @@
 import request from "supertest";
 import app from "../index";
 
-
 //Simple Test
 describe("Testing all life circle of FileUpload", () => {
     let fileId: number;
@@ -54,3 +53,9 @@ describe("Testing all life circle of FileUpload", () => {
         expect(response.body.values.id).toBe(fileId);
     });
 });
+
+afterAll(async (done) => {
+    await app.close();
+    await new Promise(resolve => setTimeout(() => resolve(), 500));
+    done();
+})
