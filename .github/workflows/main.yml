@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Make gradlew executable
-        run: ls
       - name: Run Tests
         run: |
           sudo npm install 
