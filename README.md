@@ -12,7 +12,7 @@ This project is not being done as a final product, so it should not be used in p
 :heavy_check_mark: TypeScript   
 :heavy_check_mark: ExpressJS  
 :heavy_check_mark: Jest(Unit testing)  
-:heavy_check_mark: Swagger(Documentation)  => file-storage-swagger.json
+:heavy_check_mark: Swagger(Documentation)  => file-storage-swagger.json  
 :heavy_check_mark: ObjectionJS  
 :heavy_check_mark: Knex    
 :heavy_check_mark: MVC  
