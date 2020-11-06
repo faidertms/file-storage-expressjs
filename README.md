@@ -24,4 +24,9 @@ This project is not being done as a final product, so it should not be used in p
 - [] Front-End(React). 
 
 ## Run Project
-//Todo
+sudo npm install   
+sudo npm run migrate  
+sudo npm run dev    
+
+## Run Test
+sudo npm test  
