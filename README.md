@@ -8,15 +8,16 @@ This project is not being done as a final product, so it should not be used in p
 
 
 ## This project use :sparkles: 
-:heavy_check_mark: Javascript(ES6+)   
-:heavy_check_mark: TypeScript 
-:heavy_check_mark: ExpressJS
-:heavy_check_mark: Jest(Unit testing)
-:heavy_check_mark: Swagger(Documentation)
-:heavy_check_mark: ObjectionJS
-:heavy_check_mark: Knex  
-:heavy_check_mark: MVC
-:heavy_check_mark: CI(Github only)
+:heavy_check_mark: Javascript(ES6+)    
+:heavy_check_mark: TypeScript   
+:heavy_check_mark: ExpressJS  
+:heavy_check_mark: Jest(Unit testing)  
+:heavy_check_mark: Swagger(Documentation)  => file-storage-swagger.json
+:heavy_check_mark: ObjectionJS  
+:heavy_check_mark: Knex    
+:heavy_check_mark: MVC  
+:heavy_check_mark: CI(Github only)  
+
 
 ## Things to be made :clipboard:  
 
