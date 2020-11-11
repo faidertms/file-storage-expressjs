@@ -16,7 +16,7 @@ This project is not being done as a final product, so it should not be used in p
 :heavy_check_mark: ObjectionJS  
 :heavy_check_mark: Knex    
 :heavy_check_mark: MVC  
-:heavy_check_mark: CI(Github only)  
+:heavy_check_mark: CI  
 
 
 ## Things to be made :clipboard:  
