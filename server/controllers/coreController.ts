@@ -26,7 +26,7 @@ export type ErrorHandler = {
 
 export type SendResponse = {
     message: string | Array<string>,
-    values?: object,
+    values?: object | Array<any>,
     code: number,
     res: Response,
 }
