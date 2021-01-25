@@ -1,10 +1,13 @@
 import express from "express";
-import * as dotenv from "dotenv";
 import fileUploadRoutes from "./routes/fileUploadRoute";
 import cors from 'cors';
 
-dotenv.config({ path: process.env.NODE_ENV === "development" ? ".env.dev" : ".env" });
-
+if (process.env.NODE_ENV !== 'production') {
+    import('dotenv')
+        .then((dotenv) => {
+            dotenv.config({ path: process.env.NODE_ENV === "development" ? ".env.dev" : ".env" });
+        });
+}
 const app = express();
 const PORT = process.env.PORT || 3000;
 const prefix = "/api";
