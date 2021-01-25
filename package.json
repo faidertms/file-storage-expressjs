@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "Upload de arquivos",
   "main": "server/index.ts",
+  "type": "module",
   "scripts": {
     "tsc": "tsc",
-    "prod": "npm run migrate && node build/index.js",
+    "prod": "node build/index.js",
     "start": "npm run prod",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only ./server/index.ts",
     "migrate": "npx knex migrate:latest --knexfile server/database/knexfile.ts",
     "test": "jest --forceExit --detectOpenHandles --maxWorkers=10",
-    "postinstall": "npm run tsc"
+    "postinstall": "npm run migrate && npm run tsc"
 
   },
   "author": "",
