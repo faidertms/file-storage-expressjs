@@ -5,11 +5,13 @@
   "main": "server/index.ts",
   "scripts": {
     "tsc": "tsc",
-    "prod": "npm run tsc && node build/index.js",
+    "prod": "npm run migrate && node build/index.js",
     "start": "npm run prod",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only ./server/index.ts",
     "migrate": "npx knex migrate:latest --knexfile server/database/knexfile.ts",
-    "test": "jest --forceExit --detectOpenHandles --maxWorkers=10"
+    "test": "jest --forceExit --detectOpenHandles --maxWorkers=10",
+    "postinstall": "npm run tsc"
+
   },
   "author": "",
   "license": "ISC",
