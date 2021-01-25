@@ -5,7 +5,7 @@
   "main": "server/index.ts",
   "scripts": {
     "tsc": "tsc",
-    "prod": "cross-env npm run tsc && cross-env NODE_ENV=production node build/index.js",
+    "prod": "npm run tsc && node build/index.js",
     "start": "npm run prod",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only ./server/index.ts",
     "migrate": "npx knex migrate:latest --knexfile server/database/knexfile.ts",
