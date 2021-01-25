@@ -5,6 +5,7 @@ export function getFileExtension(filename: string): string {
     let ext = /^.+\.([^.]+)$/.exec(filename);
     return ext == null ? "" : ext[1];
 }
+
 export async function getFiles(): Promise<Array<File>> {
     const files: Array<File> = await File.query();
     return files;

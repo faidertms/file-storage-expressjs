@@ -1,5 +1,5 @@
 {
-  "name": "upload",
+  "name": "tstorage",
   "version": "1.0.0",
   "description": "Upload de arquivos",
   "main": "server/index.ts",
