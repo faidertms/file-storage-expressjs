@@ -1,7 +1,5 @@
-import * as Knex from "knex";
-
 //all files belong to a single user, so originalname and filename can be unique
-export async function up(knex: Knex): Promise<void> {
+export async function up(knex) {
     return knex.schema
         .createTable("files", function (table) {
             table.bigIncrements("id").primary().unsigned();
@@ -14,7 +12,7 @@ export async function up(knex: Knex): Promise<void> {
         })
 };
 
-export async function down(knex: Knex): Promise<void> {
+export async function down(knex) {
     return knex.schema
         .dropTable("files");
 };

@@ -1,7 +1,16 @@
 import { Request, Response } from "express";
+import multer, { Multer } from "multer";
 import File from "../models/file";
 import { deleteFile, getFile, getFiles, saveFiles, updateFileName } from "../services/fileUploadService";
 import { sendResponse, errorHandler, downloadResponse } from "./coreController";
+
+interface MulterConfig extends multer.Options {
+    arrayKey: string
+};
+
+const dest: string = "storage/files";
+const multerConfig: MulterConfig = { dest, arrayKey: "[]", limits: { fileSize: 20000000 } };
+const upload: Multer = multer(multerConfig);
 
 export const index = async function (req: Request, res: Response): Promise<void> {
     try {
@@ -13,13 +22,19 @@ export const index = async function (req: Request, res: Response): Promise<void>
 }
 
 export const store = async function (req: Request, res: Response): Promise<void> {
-    try {
-        const filesToSave: Array<Express.Multer.File> = Array.isArray(req.files) ? req.files : [];
-        const filesSaved: Array<File> = await saveFiles(filesToSave);
-        sendResponse({ code: 201, message: "Created", values: filesSaved, res });
-    } catch (error) {
-        errorHandler({ error, res });
-    }
+    upload.array('files[]')(req, res, async function (error: any) {
+        if (error) {
+            errorHandler({ error, res });
+        } else {
+            try {
+                const filesToSave: Array<Express.Multer.File> = Array.isArray(req.files) ? req.files : [];
+                const filesSaved: Array<File> = await saveFiles(filesToSave);
+                sendResponse({ code: 201, message: "Created", values: filesSaved, res });
+            } catch (error) {
+                errorHandler({ error, res });
+            }
+        }
+    });
 }
 
 export const update = async function (req: Request, res: Response): Promise<void> {

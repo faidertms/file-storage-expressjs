@@ -2,8 +2,7 @@ name: Unit Tests
 
 on:
   push:
-    branches:
-      [main]
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -15,5 +14,5 @@ jobs:
       - name: Run Tests
         run: |
           sudo npm install 
-          sudo npm run migrate
+          sudo npm run migrate:dev
           sudo npm test

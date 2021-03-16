@@ -1,4 +1,5 @@
 import { Response } from "express";
+import multer from "multer";
 import {
     ValidationError,
     NotFoundError,
@@ -124,6 +125,21 @@ export const errorHandler = ({ values, message, code, res, error }: ErrorHandler
             code: 500,
             message: 'Unknown Database Error',
         });
+    } else if (error instanceof multer.MulterError) {
+        if (error.code === 'LIMIT_FILE_SIZE') {
+            res.status(413).send({
+                code: 413,
+                message: 'File Too Large',
+                values
+            });
+        } else {
+            res.status(500).send({
+                code: 500,
+                message: 'Server Error',
+                values
+            });
+        }
+
     } else {
         res.status(500).send({
             code: code ?? 500,
