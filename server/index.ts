@@ -2,7 +2,7 @@ import express from "express";
 import fileUploadRoutes from "./routes/fileUploadRoute";
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from '../file-storage-swagger.json';
+import swaggerDocument from './docs/file-storage-swagger.json';
 
 if (process.env.NODE_ENV !== 'production') {
     import('dotenv')
